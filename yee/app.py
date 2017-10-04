@@ -30,6 +30,8 @@ def hello_monkey():
 			 To Listen to Rick Astley - Never Gonna Give Yee Up, Press 5.
 			 To Listen to Yee Mania, Press 6.
 			 To Listen to Yee Busters, Press 7.
+			 To Listen to The Original Yee, Press 8.
+			 To Listen to Now Watch Me Yee, Press 9.
 			 Press any other key to start over.""")
 	resp.append(g)
 
@@ -73,6 +75,14 @@ def handle_key():
 	elif digit_pressed == "7":
 		resp = VoiceResponse()
 		resp.play("https://static.jcharante.com/yee/yee-busters.mp3")
+		return str(resp)
+	elif digit_pressed == "8":
+		resp = VoiceResponse()
+		resp.play("https://static.jcharante.com/yee/yee-original.mp3")
+		return str(resp)
+	elif digit_pressed == "9":
+		resp = VoiceResponse()
+		resp.play("https://static.jcharante.com/yee/now-watch-me-yee.mp3")
 		return str(resp)
 	else:
 		return redirect("/")
