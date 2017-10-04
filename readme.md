@@ -23,6 +23,14 @@ where this crazy adventure will tka eus.
 export PROXIED_NUM="+1-XXX-XXX-XXXX"  # The number that is dialed on /forward
 ```
 
+## Software
+
+```bash
+$ make install
+```
+
 # Running
 
-`$ ./runServer.sh`
+```bash
+$ ./runServer.sh
+```
