@@ -20,6 +20,7 @@ def hello_monkey():
 	resp.say("Thank you for calling the National")
 	resp.play("https://static.jcharante.com/yee/yee.mp3")
 	resp.say("Emergency Hotline.")
+	resp.say("This call may be recorded for quality assurance purposes")
 
 	g = Gather(numDigits=1, action="/handle-key", method="POST")
 	g.say("""To listen to a Standard Yee, Press 0.
