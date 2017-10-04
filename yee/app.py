@@ -22,7 +22,7 @@ def hello_monkey():
 	resp.say("Emergency Hotline.")
 	resp.say("This call may be recorded for quality assurance purposes")
 
-	g = Gather(numDigits=1, action="/handle-key", method="POST")
+	g = Gather(num_digits=1, action="/handle-key", method="POST")
 	g.say("""To listen to a Standard Yee, Press 0.
 			 To listen to A-ha - Take on Yee, Press 1.
 			 To listen to Smash Mouth - All Yee, Press 2.
