@@ -17,13 +17,12 @@ def forward():
 def hello_monkey():
 	"""Respond to incoming requests."""
 	resp = VoiceResponse()
-	resp.say("Thank you for calling the National")
-	resp.play("https://static.jcharante.com/yee/yee.mp3")
-	resp.say("Emergency Hotline.")
-	resp.say("This call may be recorded for quality assurance purposes")
-
 	g = Gather(num_digits=1, action="/handle-key", method="POST")
-	g.say("""To listen to a Standard Yee, Press 0.
+	g.say("Thank you for calling the National")
+	g.play("https://static.jcharante.com/yee/yee.mp3")
+	g.say("Emergency Hotline.")
+	g.say("""This call may be recorded for quality assurance purposes
+			 To listen to a Standard Yee, Press 0.
 			 To listen to A-ha - Take on Yee, Press 1.
 			 To listen to Smash Mouth - All Yee, Press 2.
 			 To Listen to Eiffel 65 - I'm Yee, Press 3.
