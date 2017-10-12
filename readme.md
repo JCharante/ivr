@@ -21,6 +21,7 @@ where this crazy adventure will tka eus.
 
 ```bash
 export PROXIED_NUM="+1-XXX-XXX-XXXX"  # The number that is dialed on /forward
+export PAVLOK_ACCESS_TOKEN=""  # (optional) the access token for your pavlok
 ```
 
 ## Software

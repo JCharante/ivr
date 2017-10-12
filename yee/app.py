@@ -1,12 +1,26 @@
 from flask import Flask, request, redirect
 from twilio.twiml.voice_response import VoiceResponse, Gather, Dial
 import os
+import requests
 
 app = Flask(__name__)
 
 
+def trigger_pavlok(caller):
+	if 'PAVLOK_ACCESS_TOKEN' in os.environ:
+		pavlok_access_token = os.environ['PAVLOK_ACCESS_TOKEN']
+		stimulant = 'led'
+		intensity = 4
+		payload = {
+			'access_token': pavlok_access_token,
+			'reason': f'Call from {caller}'
+		}
+		requests.post(f'http://pavlok-mvp.herokuapp.com/api/v1/stimuli/{stimulant}/{intensity}', params=payload)
+
+
 @app.route("/forward", methods=['GET', 'POST'])
 def forward():
+	trigger_pavlok(request.values.get('From', 'Unknown'))
 	resp = VoiceResponse()
 	dial = Dial(number=os.environ['PROXIED_NUM'], record="record-from-ringing-dual")
 	resp.append(dial)
