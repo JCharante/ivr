@@ -9,8 +9,8 @@ app = Flask(__name__)
 def trigger_pavlok(caller):
 	if 'PAVLOK_ACCESS_TOKEN' in os.environ:
 		pavlok_access_token = os.environ['PAVLOK_ACCESS_TOKEN']
-		stimulant = 'led'
-		intensity = 4
+		stimulant = 'vibration'
+		intensity = 255
 		payload = {
 			'access_token': pavlok_access_token,
 			'reason': f'Call from {caller}'
